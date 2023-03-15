@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Upload</title>
+	<style>
+		body {
+			background-image: url("../static/images/background.jpg");
+			font-size: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			flex-direction: column;
+		}
+		h2 {
+			font-size: 40px;
+			margin-bottom: 50px;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		input[type="file"] {
+			font-size: 30px;
+			margin-top: 30px;
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		input[type="file"]:hover {
+			background-color: #3e8e41;
+		}
+		input[type="submit"] {
+			margin-top: 30px;
+			padding: 10px 20px;
+			font-size: 30px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h2>Please Choose an Excel File</h2>
+	<form method="POST" enctype="multipart/form-data">
+		<input type="file" name="file">
+		<input type="submit" value="Upload">
+	</form>
+</body>
+</html>
