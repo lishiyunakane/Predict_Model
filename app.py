@@ -54,9 +54,11 @@ def generate_output(file):
 
     predictions = model.predict(new_data_scaled)
     df = pd.read_excel(file, skiprows=6, header=0)
-    project_name = df['Project No']
+    project_name = df[['Project No','Description','Client','Sales\nAmount\n(Home)']]
     df2 = pd.DataFrame(predictions)
+    df2 = df2.applymap(lambda x: round(x, 3))
     results = pd.concat([project_name, df2], axis=1)
+
     return results
 
 
@@ -68,6 +70,7 @@ def index():
             output = generate_output(file)
             return render_template('result.html', output=output)
     return render_template('index.html')
+
 
 
 if __name__ == '__main__':
