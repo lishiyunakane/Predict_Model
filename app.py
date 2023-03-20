@@ -31,7 +31,7 @@ def generate_output(file):
     df1 = pd.concat([df1.drop(['Project No', 'Country'], axis=1), dummies3], axis=1)
 
     df_empty = pd.read_excel('s1.xlsx')
-    df_empty[['Sales Amount (Home)','Target Gross Profit (%)','Project No_A','Project No_B','Project No_C','Project No_D','Project No_I','Project No_M','Project No_S','Country_S','Country_O']] = df1.loc[:,['Sales\nAmount\n(Home)','Target\nGross Profit (%)','Project No_A','Project No_B','Project No_C','Project No_D','Project No_I','Project No_M','Project No_S','Country_S','Country_O']]
+    df_empty[['Sales Amount (Home)','Target Gross Profit (%)']] = df1.loc[:,['Sales\nAmount\n(Home)','Target\nGross Profit (%)']]
     df_empty.fillna(0, inplace=True)
     for col in df1.columns:
         if col in df_empty.columns:
